@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let localVideoURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("GasFlames", ofType: "mov")!)
+        let localVideoURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kuala_lumpur_timelapse", ofType: "mp4")!)
         loopingVideoPlayer.videoURL = localVideoURL
         loopingVideoPlayer.videoGravity = AVLayerVideoGravityResizeAspect
         loopingVideoPlayer.beginPlayBack()

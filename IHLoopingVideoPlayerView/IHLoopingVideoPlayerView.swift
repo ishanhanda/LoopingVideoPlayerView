@@ -83,7 +83,7 @@ class IHLoopingVideoPlayerView: UIView {
     private var currentVideoPlayDuration: Double!
     
     /// Transion to to fade into next video.
-    private var fadeTime: Double = 2.0
+    private var fadeTime: Double = 5.0
     
     /// stores copies of urls to be played back to back.
     private var videoURLs: [NSURL]?

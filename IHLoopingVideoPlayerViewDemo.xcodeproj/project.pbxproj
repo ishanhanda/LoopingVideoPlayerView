@@ -15,6 +15,7 @@
 		E3EDB6EE1D5D278D0033CCC2 /* GasFlames.mov in Resources */ = {isa = PBXBuildFile; fileRef = E3EDB6ED1D5D278D0033CCC2 /* GasFlames.mov */; };
 		E3EDB6F71D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EDB6F41D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift */; };
 		E3EDB6F81D5D2C6E0033CCC2 /* IHVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EDB6F61D5D2C6E0033CCC2 /* IHVideoPlayerView.swift */; };
+		E3F6E3951D81C25300C693F2 /* kuala_lumpur_timelapse.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E3F6E3941D81C23000C693F2 /* kuala_lumpur_timelapse.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E3EDB6ED1D5D278D0033CCC2 /* GasFlames.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = GasFlames.mov; sourceTree = "<group>"; };
 		E3EDB6F41D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHLoopingVideoPlayerView.swift; sourceTree = "<group>"; };
 		E3EDB6F61D5D2C6E0033CCC2 /* IHVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHVideoPlayerView.swift; sourceTree = "<group>"; };
+		E3F6E3941D81C23000C693F2 /* kuala_lumpur_timelapse.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kuala_lumpur_timelapse.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				E3EDB6DB1D5D25BD0033CCC2 /* AppDelegate.swift */,
+				E3F6E3941D81C23000C693F2 /* kuala_lumpur_timelapse.mp4 */,
 				E3EDB6ED1D5D278D0033CCC2 /* GasFlames.mov */,
 				E3EDB6DD1D5D25BD0033CCC2 /* ViewController.swift */,
 				E3EDB6DF1D5D25BD0033CCC2 /* Main.storyboard */,
@@ -149,6 +152,7 @@
 			files = (
 				E3EDB6EE1D5D278D0033CCC2 /* GasFlames.mov in Resources */,
 				E3EDB6E61D5D25BD0033CCC2 /* LaunchScreen.storyboard in Resources */,
+				E3F6E3951D81C25300C693F2 /* kuala_lumpur_timelapse.mp4 in Resources */,
 				E3EDB6E31D5D25BD0033CCC2 /* Assets.xcassets in Resources */,
 				E3EDB6E11D5D25BD0033CCC2 /* Main.storyboard in Resources */,
 			);
@@ -314,6 +318,7 @@
 				E3EDB6EC1D5D25BD0033CCC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
