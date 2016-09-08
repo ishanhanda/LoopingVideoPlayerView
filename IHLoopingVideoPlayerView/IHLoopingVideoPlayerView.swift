@@ -31,10 +31,35 @@ class IHLoopingVideoPlayerView: UIView {
     private var PlayerStatusKey = "status"
     private var PlayerItemKey = "currentItem"
     
+    /// Video player view responsible for playing odd index
     private var oddVideoPlayerView = IHVideoPlayerView()
+    
+    /// Video player view responsible for playing even index
     private var evenVideoPlayerView = IHVideoPlayerView()
     
+    /// Index of the video to play
     private var currentVideoIndex: Int?
+    
+    /**
+     Specifies how the video is displayed within an IHLoopingVideoPlayerView’s bounds.
+     
+     Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+     and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspectFill is default.
+     See <AVFoundation/AVAnimation.h> for a description of these options.
+     */
+    var videoGravity: String {
+        set {
+            (self.oddVideoPlayerView.layer as! AVPlayerLayer).videoGravity = newValue
+            (self.evenVideoPlayerView.layer as! AVPlayerLayer).videoGravity = newValue
+        }
+        get {
+            return (self.evenVideoPlayerView.layer as! AVPlayerLayer).videoGravity
+        }
+    }
+    
+    /**
+     Gives the index of the next video to be played.
+    */
     private var nextVideoIndex: Int? {
         get {
             if let currentVideoIndex = self.currentVideoIndex ,uRls = self.videoURLs where uRls.count > 0 {
@@ -45,6 +70,8 @@ class IHLoopingVideoPlayerView: UIView {
             }
         }
     }
+    
+    /// Helper to check if current index is even.
     private var isCurrentEven: Bool {
         get {
             guard let currentIndex = self.currentVideoIndex else { return false }
@@ -52,12 +79,16 @@ class IHLoopingVideoPlayerView: UIView {
         }
     }
     
+    /// The duration for which the current video will be played before fading in the next loop.
     private var currentVideoPlayDuration: Double!
     
+    /// Transion to to fade into next video.
     private var fadeTime: Double = 2.0
     
+    /// stores copies of urls to be played back to back.
     private var videoURLs: [NSURL]?
     
+    /// The url for the video to be played infinitely.
     var videoURL: NSURL? {
         get {
             return self.videoURLs?.first ?? nil
@@ -122,11 +153,13 @@ class IHLoopingVideoPlayerView: UIView {
 
 extension IHLoopingVideoPlayerView {
     
+    /// Call this function to start playng the video.
     func beginPlayBack() {
         guard let urls = self.videoURLs where urls.count > 0 else {
             return
         }
         
+        // Setting up even and odd players to play the first two items in urls
         self.currentVideoIndex = 0
         let playerItem = AVPlayerItem(URL: urls[0])
         playerItem.addObserver(self, forKeyPath: PlayerStatusKey, options: [.New, .Old], context: &self.EvenPlayerStatusContext)
@@ -137,6 +170,13 @@ extension IHLoopingVideoPlayerView {
         self.oddVideoPlayerView.player.replaceCurrentItemWithPlayerItem(nextPlayerItem)
     }
     
+    
+    /**
+     This function is called once the status for each AVPlayer changes to Ready to Play.
+     
+     it fades in the odd or even player based on odd or even index and stops playeing the other player.
+     This is repeated infinitely so that the looping video appears to be one continuous video.
+     */
     private func startPlaying() {
         if self.isCurrentEven {
             self.bringSubviewToFront(self.evenVideoPlayerView)
@@ -149,6 +189,7 @@ extension IHLoopingVideoPlayerView {
                     }
             })
             
+            // Set up to play the odd video after current play duration.
             delay(self.currentVideoPlayDuration) {
                 self.currentVideoIndex = self.nextVideoIndex
                 self.oddVideoPlayerView.player.currentItem?.removeObserver(self, forKeyPath: self.PlayerStatusKey, context: &self.OddPlayerStatusContext)
@@ -167,6 +208,7 @@ extension IHLoopingVideoPlayerView {
                     }
             })
             
+            // Set up to play the even video after current play duration.
             delay(self.currentVideoPlayDuration) {
                 self.currentVideoIndex = self.nextVideoIndex
                 self.evenVideoPlayerView.player.currentItem?.removeObserver(self, forKeyPath: self.PlayerStatusKey, context: &self.EvenPlayerStatusContext)
@@ -179,6 +221,7 @@ extension IHLoopingVideoPlayerView {
 }
 
 
+/// utiltiy function to execute after time delay.
 func delay(delay:Double, closure:()->()) {
     dispatch_after(
         dispatch_time(
@@ -197,11 +240,13 @@ extension IHLoopingVideoPlayerView {
         switch context {
         case &self.OddPlayerStatusContext where !self.isCurrentEven:
             if self.oddVideoPlayerView.player.currentItem!.status == .ReadyToPlay {
+                // Calculate the duration for which the next item is to played.
                 self.currentVideoPlayDuration = self.playerDurationForPlayerItem(self.oddVideoPlayerView.player.currentItem!)
                 self.startPlaying()
             }
         case &self.EvenPlayerStatusContext where self.isCurrentEven:
             if self.evenVideoPlayerView.player.currentItem!.status == .ReadyToPlay {
+                // Calculate the duration for which the next item is to played.
                 self.currentVideoPlayDuration = self.playerDurationForPlayerItem(self.evenVideoPlayerView.player.currentItem!)
                 self.startPlaying()
             }
@@ -210,7 +255,10 @@ extension IHLoopingVideoPlayerView {
         }
     }
     
-    
+    /** 
+     The duration for which an item should be played.
+     Calculated by subtracting the fadeTime from the duration of the playerItem.
+     */
     func playerDurationForPlayerItem(playerItem: AVPlayerItem) -> Double {
         return CMTimeGetSeconds(playerItem.duration) - self.fadeTime - 1
     }

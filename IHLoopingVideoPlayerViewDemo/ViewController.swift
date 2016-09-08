@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -15,8 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let localVideoURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("GasFlames", ofType: "mov")!)
-        self.loopingVideoPlayer.videoURL = localVideoURL
-        self.loopingVideoPlayer.beginPlayBack()
+        loopingVideoPlayer.videoURL = localVideoURL
+        loopingVideoPlayer.videoGravity = AVLayerVideoGravityResizeAspect
+        loopingVideoPlayer.beginPlayBack()
     }
 
     override func didReceiveMemoryWarning() {
