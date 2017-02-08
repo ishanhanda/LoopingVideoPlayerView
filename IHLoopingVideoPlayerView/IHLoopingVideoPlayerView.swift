@@ -47,7 +47,7 @@ class IHLoopingVideoPlayerView: UIView {
      and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspectFill is default.
      See <AVFoundation/AVAnimation.h> for a description of these options.
      */
-    var videoGravity: String {
+    public var videoGravity: String {
         set {
             (self.oddVideoPlayerView.layer as! AVPlayerLayer).videoGravity = newValue
             (self.evenVideoPlayerView.layer as! AVPlayerLayer).videoGravity = newValue
@@ -89,7 +89,7 @@ class IHLoopingVideoPlayerView: UIView {
     fileprivate var videoURLs: [URL]?
     
     /// The url for the video to be played infinitely.
-    var videoURL: URL? {
+    public var videoURL: URL? {
         get {
             return self.videoURLs?.first ?? nil
         }
@@ -106,25 +106,25 @@ class IHLoopingVideoPlayerView: UIView {
     
     // MARK: - Initalizers
     
-    override init(frame : CGRect) {
+    public override init(frame : CGRect) {
         super.init(frame : frame)
         self.commonInit()
     }
     
     
-    convenience init(videoURL: URL) {
+    public convenience init(videoURL: URL) {
         self.init(frame:CGRect.zero)
         self.videoURLs = [videoURL, videoURL]
     }
     
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
     
     
-    fileprivate func commonInit() {
+    private func commonInit() {
         // Initialize Players
         self.oddVideoPlayerView.player = AVPlayer()
         self.oddVideoPlayerView.translatesAutoresizingMaskIntoConstraints = false
@@ -154,7 +154,7 @@ class IHLoopingVideoPlayerView: UIView {
 extension IHLoopingVideoPlayerView {
     
     /// Call this function to start playng the video.
-    func beginPlayBack() {
+    public func beginPlayBack() {
         guard let urls = self.videoURLs, urls.count > 0 else {
             return
         }
