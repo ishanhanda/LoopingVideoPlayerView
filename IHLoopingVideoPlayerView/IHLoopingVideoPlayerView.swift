@@ -25,20 +25,20 @@ import AVFoundation
 
 class IHLoopingVideoPlayerView: UIView {
     
-    private var OddPlayerStatusContext = "OddPlayerStatusContext"
-    private var EvenPlayerStatusContext = "EvenPlayerStatusContext"
+    fileprivate var OddPlayerStatusContext = "OddPlayerStatusContext"
+    fileprivate var EvenPlayerStatusContext = "EvenPlayerStatusContext"
     
-    private var PlayerStatusKey = "status"
-    private var PlayerItemKey = "currentItem"
+    fileprivate var PlayerStatusKey = "status"
+    fileprivate var PlayerItemKey = "currentItem"
     
     /// Video player view responsible for playing odd index
-    private var oddVideoPlayerView = IHVideoPlayerView()
+    fileprivate var oddVideoPlayerView = IHVideoPlayerView()
     
     /// Video player view responsible for playing even index
-    private var evenVideoPlayerView = IHVideoPlayerView()
+    fileprivate var evenVideoPlayerView = IHVideoPlayerView()
     
     /// Index of the video to play
-    private var currentVideoIndex: Int?
+    fileprivate var currentVideoIndex: Int?
     
     /**
      Specifies how the video is displayed within an IHLoopingVideoPlayerView’s bounds.
@@ -60,9 +60,9 @@ class IHLoopingVideoPlayerView: UIView {
     /**
      Gives the index of the next video to be played.
     */
-    private var nextVideoIndex: Int? {
+    fileprivate var nextVideoIndex: Int? {
         get {
-            if let currentVideoIndex = self.currentVideoIndex ,uRls = self.videoURLs where uRls.count > 0 {
+            if let currentVideoIndex = self.currentVideoIndex ,let uRls = self.videoURLs, uRls.count > 0 {
                 let newIndex = currentVideoIndex + 1
                 return newIndex < uRls.count ? newIndex : 0
             } else {
@@ -72,7 +72,7 @@ class IHLoopingVideoPlayerView: UIView {
     }
     
     /// Helper to check if current index is even.
-    private var isCurrentEven: Bool {
+    fileprivate var isCurrentEven: Bool {
         get {
             guard let currentIndex = self.currentVideoIndex else { return false }
             return currentIndex % 2 == 0
@@ -80,16 +80,16 @@ class IHLoopingVideoPlayerView: UIView {
     }
     
     /// The duration for which the current video will be played before fading in the next loop.
-    private var currentVideoPlayDuration: Double!
+    fileprivate var currentVideoPlayDuration: Double!
     
     /// Transion to to fade into next video.
-    private var fadeTime: Double = 5.0
+    fileprivate var fadeTime: Double = 5.0
     
     /// stores copies of urls to be played back to back.
-    private var videoURLs: [NSURL]?
+    fileprivate var videoURLs: [URL]?
     
     /// The url for the video to be played infinitely.
-    var videoURL: NSURL? {
+    var videoURL: URL? {
         get {
             return self.videoURLs?.first ?? nil
         }
@@ -112,7 +112,7 @@ class IHLoopingVideoPlayerView: UIView {
     }
     
     
-    convenience init(videoURL: NSURL) {
+    convenience init(videoURL: URL) {
         self.init(frame:CGRect.zero)
         self.videoURLs = [videoURL, videoURL]
     }
@@ -124,7 +124,7 @@ class IHLoopingVideoPlayerView: UIView {
     }
     
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         // Initialize Players
         self.oddVideoPlayerView.player = AVPlayer()
         self.oddVideoPlayerView.translatesAutoresizingMaskIntoConstraints = false
@@ -133,12 +133,12 @@ class IHLoopingVideoPlayerView: UIView {
         
         // Create View Layout
         self.addSubview(self.oddVideoPlayerView)
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[oddVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["oddVideoPlayerView": self.oddVideoPlayerView]))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[oddVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["oddVideoPlayerView": self.oddVideoPlayerView]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[oddVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["oddVideoPlayerView": self.oddVideoPlayerView]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[oddVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["oddVideoPlayerView": self.oddVideoPlayerView]))
         
         self.addSubview(self.evenVideoPlayerView)
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[evenVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["evenVideoPlayerView": self.evenVideoPlayerView]))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[evenVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["evenVideoPlayerView": self.evenVideoPlayerView]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[evenVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["evenVideoPlayerView": self.evenVideoPlayerView]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[evenVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["evenVideoPlayerView": self.evenVideoPlayerView]))
     }
     
     
@@ -155,19 +155,19 @@ extension IHLoopingVideoPlayerView {
     
     /// Call this function to start playng the video.
     func beginPlayBack() {
-        guard let urls = self.videoURLs where urls.count > 0 else {
+        guard let urls = self.videoURLs, urls.count > 0 else {
             return
         }
         
         // Setting up even and odd players to play the first two items in urls
         self.currentVideoIndex = 0
-        let playerItem = AVPlayerItem(URL: urls[0])
-        playerItem.addObserver(self, forKeyPath: PlayerStatusKey, options: [.New, .Old], context: &self.EvenPlayerStatusContext)
-        self.evenVideoPlayerView.player.replaceCurrentItemWithPlayerItem(playerItem)
+        let playerItem = AVPlayerItem(url: urls[0])
+        playerItem.addObserver(self, forKeyPath: PlayerStatusKey, options: [.new, .old], context: &self.EvenPlayerStatusContext)
+        self.evenVideoPlayerView.player.replaceCurrentItem(with: playerItem)
         
-        let nextPlayerItem = AVPlayerItem(URL: urls[1])
-        nextPlayerItem.addObserver(self, forKeyPath: PlayerStatusKey, options: [.New, .Old], context: &self.OddPlayerStatusContext)
-        self.oddVideoPlayerView.player.replaceCurrentItemWithPlayerItem(nextPlayerItem)
+        let nextPlayerItem = AVPlayerItem(url: urls[1])
+        nextPlayerItem.addObserver(self, forKeyPath: PlayerStatusKey, options: [.new, .old], context: &self.OddPlayerStatusContext)
+        self.oddVideoPlayerView.player.replaceCurrentItem(with: nextPlayerItem)
     }
     
     
@@ -177,11 +177,11 @@ extension IHLoopingVideoPlayerView {
      it fades in the odd or even player based on odd or even index and stops playeing the other player.
      This is repeated infinitely so that the looping video appears to be one continuous video.
      */
-    private func startPlaying() {
+    fileprivate func startPlaying() {
         if self.isCurrentEven {
-            self.bringSubviewToFront(self.evenVideoPlayerView)
+            self.bringSubview(toFront: self.evenVideoPlayerView)
             self.evenVideoPlayerView.player.play()
-            UIView.animateWithDuration(self.fadeTime, animations: {
+            UIView.animate(withDuration: self.fadeTime, animations: {
                 self.evenVideoPlayerView.alpha = 1
                 }, completion: { (finished) in
                     if finished {
@@ -193,14 +193,14 @@ extension IHLoopingVideoPlayerView {
             delay(self.currentVideoPlayDuration) {
                 self.currentVideoIndex = self.nextVideoIndex
                 self.oddVideoPlayerView.player.currentItem?.removeObserver(self, forKeyPath: self.PlayerStatusKey, context: &self.OddPlayerStatusContext)
-                let playerItem = AVPlayerItem(URL: self.videoURLs![self.currentVideoIndex!])
-                playerItem.addObserver(self, forKeyPath: self.PlayerStatusKey, options: [.New, .Old], context: &self.OddPlayerStatusContext)
-                self.oddVideoPlayerView.player.replaceCurrentItemWithPlayerItem(playerItem)
+                let playerItem = AVPlayerItem(url: self.videoURLs![self.currentVideoIndex!])
+                playerItem.addObserver(self, forKeyPath: self.PlayerStatusKey, options: [.new, .old], context: &self.OddPlayerStatusContext)
+                self.oddVideoPlayerView.player.replaceCurrentItem(with: playerItem)
             }
         } else {
-            self.bringSubviewToFront(self.oddVideoPlayerView)
+            self.bringSubview(toFront: self.oddVideoPlayerView)
             self.oddVideoPlayerView.player.play()
-            UIView.animateWithDuration(self.fadeTime, animations: {
+            UIView.animate(withDuration: self.fadeTime, animations: {
                 self.oddVideoPlayerView.alpha = 1
                 }, completion: { (finished) in
                     if finished {
@@ -212,9 +212,9 @@ extension IHLoopingVideoPlayerView {
             delay(self.currentVideoPlayDuration) {
                 self.currentVideoIndex = self.nextVideoIndex
                 self.evenVideoPlayerView.player.currentItem?.removeObserver(self, forKeyPath: self.PlayerStatusKey, context: &self.EvenPlayerStatusContext)
-                let playerItem = AVPlayerItem(URL: self.videoURLs![self.currentVideoIndex!])
-                playerItem.addObserver(self, forKeyPath: self.PlayerStatusKey, options: [.New, .Old], context: &self.EvenPlayerStatusContext)
-                self.evenVideoPlayerView.player.replaceCurrentItemWithPlayerItem(playerItem)
+                let playerItem = AVPlayerItem(url: self.videoURLs![self.currentVideoIndex!])
+                playerItem.addObserver(self, forKeyPath: self.PlayerStatusKey, options: [.new, .old], context: &self.EvenPlayerStatusContext)
+                self.evenVideoPlayerView.player.replaceCurrentItem(with: playerItem)
             }
         }
     }
@@ -222,13 +222,9 @@ extension IHLoopingVideoPlayerView {
 
 
 /// utiltiy function to execute after time delay.
-func delay(delay:Double, closure:()->()) {
-    dispatch_after(
-        dispatch_time(
-            DISPATCH_TIME_NOW,
-            Int64(delay * Double(NSEC_PER_SEC))
-        ),
-        dispatch_get_main_queue(), closure)
+func delay(_ delay:Double, closure:@escaping ()->()) {
+    DispatchQueue.main.asyncAfter(
+        deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
 }
 
 
@@ -236,16 +232,16 @@ func delay(delay:Double, closure:()->()) {
 
 extension IHLoopingVideoPlayerView {
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        switch context {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        switch context! {
         case &self.OddPlayerStatusContext where !self.isCurrentEven:
-            if self.oddVideoPlayerView.player.currentItem!.status == .ReadyToPlay {
+            if self.oddVideoPlayerView.player.currentItem!.status == .readyToPlay {
                 // Calculate the duration for which the next item is to played.
                 self.currentVideoPlayDuration = self.playerDurationForPlayerItem(self.oddVideoPlayerView.player.currentItem!)
                 self.startPlaying()
             }
         case &self.EvenPlayerStatusContext where self.isCurrentEven:
-            if self.evenVideoPlayerView.player.currentItem!.status == .ReadyToPlay {
+            if self.evenVideoPlayerView.player.currentItem!.status == .readyToPlay {
                 // Calculate the duration for which the next item is to played.
                 self.currentVideoPlayDuration = self.playerDurationForPlayerItem(self.evenVideoPlayerView.player.currentItem!)
                 self.startPlaying()
@@ -259,7 +255,7 @@ extension IHLoopingVideoPlayerView {
      The duration for which an item should be played.
      Calculated by subtracting the fadeTime from the duration of the playerItem.
      */
-    func playerDurationForPlayerItem(playerItem: AVPlayerItem) -> Double {
+    func playerDurationForPlayerItem(_ playerItem: AVPlayerItem) -> Double {
         return CMTimeGetSeconds(playerItem.duration) - self.fadeTime - 1
     }
 }

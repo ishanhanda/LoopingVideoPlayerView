@@ -52,13 +52,13 @@ class IHVideoPlayerView: UIView {
     }
     
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         let layer = self.layer as! AVPlayerLayer
         layer.videoGravity = AVLayerVideoGravityResizeAspectFill
     }
     
     
-    override class func layerClass() -> AnyClass {
+    override class var layerClass : AnyClass {
         return AVPlayerLayer.self
     }
 }
