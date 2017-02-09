@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let localVideoURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kuala_lumpur_timelapse", ofType: "mp4")!)
+        let localVideoURL = URL(fileURLWithPath: Bundle.main.path(forResource: "kuala_lumpur_timelapse", ofType: "mp4")!)
         loopingVideoPlayer.videoURL = localVideoURL
         loopingVideoPlayer.videoGravity = AVLayerVideoGravityResizeAspect
         loopingVideoPlayer.beginPlayBack()
@@ -26,9 +26,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func buttontapped(sender: AnyObject) {
-        let url = NSURL(string: "http://www.videezy.com")!
-        UIApplication.sharedApplication().openURL(url)
+    @IBAction func buttontapped(_ sender: AnyObject) {
+        let url = URL(string: "http://www.videezy.com")!
+        UIApplication.shared.openURL(url)
     }
 }
 
