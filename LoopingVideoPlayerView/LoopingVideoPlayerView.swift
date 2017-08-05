@@ -1,5 +1,5 @@
 //
-//  IHLoopingVideoPlayerView.swift
+//  LoopingVideoPlayerView.swift
 //
 //  Copyright © 2016 Ishan Handa. All rights reserved.
 //
@@ -23,7 +23,7 @@
 import UIKit
 import AVFoundation
 
-class IHLoopingVideoPlayerView: UIView {
+class LoopingVideoPlayerView: UIView {
     
     fileprivate var OddPlayerStatusContext = "OddPlayerStatusContext"
     fileprivate var EvenPlayerStatusContext = "EvenPlayerStatusContext"
@@ -32,16 +32,16 @@ class IHLoopingVideoPlayerView: UIView {
     fileprivate var PlayerItemKey = "currentItem"
     
     /// Video player view responsible for playing odd index
-    fileprivate var oddVideoPlayerView = IHVideoPlayerView()
+    fileprivate var oddVideoPlayerView = VideoPlayerView()
     
     /// Video player view responsible for playing even index
-    fileprivate var evenVideoPlayerView = IHVideoPlayerView()
+    fileprivate var evenVideoPlayerView = VideoPlayerView()
     
     /// Index of the video to play
     fileprivate var currentVideoIndex: Int?
     
     /**
-     Specifies how the video is displayed within an IHLoopingVideoPlayerView’s bounds.
+     Specifies how the video is displayed within an LoopingVideoPlayerView’s bounds.
      
      Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
      and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspectFill is default.
@@ -111,18 +111,15 @@ class IHLoopingVideoPlayerView: UIView {
         self.commonInit()
     }
     
-    
     public convenience init(videoURL: URL) {
         self.init(frame:CGRect.zero)
         self.videoURLs = [videoURL, videoURL]
     }
     
-    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
-    
     
     private func commonInit() {
         // Initialize Players
@@ -141,7 +138,6 @@ class IHLoopingVideoPlayerView: UIView {
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[evenVideoPlayerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["evenVideoPlayerView": self.evenVideoPlayerView]))
     }
     
-    
     deinit {
         self.oddVideoPlayerView.player.currentItem?.removeObserver(self, forKeyPath: self.PlayerStatusKey, context: &self.OddPlayerStatusContext)
         self.evenVideoPlayerView.player.currentItem?.removeObserver(self, forKeyPath: self.PlayerStatusKey, context: &self.EvenPlayerStatusContext)
@@ -151,7 +147,7 @@ class IHLoopingVideoPlayerView: UIView {
 
 // MARK: - LoopingVideoPlayerView Playback Control
 
-extension IHLoopingVideoPlayerView {
+extension LoopingVideoPlayerView {
     
     /// Call this function to start playng the video.
     public func beginPlayBack() {
@@ -169,7 +165,6 @@ extension IHLoopingVideoPlayerView {
         nextPlayerItem.addObserver(self, forKeyPath: PlayerStatusKey, options: [.new, .old], context: &self.OddPlayerStatusContext)
         self.oddVideoPlayerView.player.replaceCurrentItem(with: nextPlayerItem)
     }
-    
     
     /**
      This function is called once the status for each AVPlayer changes to Ready to Play.
@@ -230,7 +225,7 @@ func delay(_ delay:Double, closure:@escaping ()->()) {
 
 // MARK: - LoopingVideoPlayerView AVPlayer Observers
 
-extension IHLoopingVideoPlayerView {
+extension LoopingVideoPlayerView {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         switch context! {
