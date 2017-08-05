@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IHLoopingVideoPlayerView/IHLoopingVideoPlayerView.swift"
-            timestampString = "495043600.098921"
+            timestampString = "523649285.592612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "startPlaying()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IHLoopingVideoPlayerView/IHLoopingVideoPlayerView.swift"
-            timestampString = "495043606.329297"
+            timestampString = "523649285.592612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>

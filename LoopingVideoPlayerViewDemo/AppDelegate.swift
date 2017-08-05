@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  IHLoopingVideoPlayerViewDemo
+//  LoopingVideoPlayerViewDemo
 //
 //  Created by Ishan Handa on 11/08/16.
 //  Copyright © 2016 Ishan Handa. All rights reserved.

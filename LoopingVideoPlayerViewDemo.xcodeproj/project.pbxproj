@@ -7,29 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E3EDB6DC1D5D25BD0033CCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EDB6DB1D5D25BD0033CCC2 /* AppDelegate.swift */; };
-		E3EDB6DE1D5D25BD0033CCC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EDB6DD1D5D25BD0033CCC2 /* ViewController.swift */; };
-		E3EDB6E11D5D25BD0033CCC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3EDB6DF1D5D25BD0033CCC2 /* Main.storyboard */; };
-		E3EDB6E31D5D25BD0033CCC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3EDB6E21D5D25BD0033CCC2 /* Assets.xcassets */; };
-		E3EDB6E61D5D25BD0033CCC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3EDB6E41D5D25BD0033CCC2 /* LaunchScreen.storyboard */; };
-		E3EDB6EE1D5D278D0033CCC2 /* GasFlames.mov in Resources */ = {isa = PBXBuildFile; fileRef = E3EDB6ED1D5D278D0033CCC2 /* GasFlames.mov */; };
-		E3EDB6F71D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EDB6F41D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift */; };
-		E3EDB6F81D5D2C6E0033CCC2 /* IHVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EDB6F61D5D2C6E0033CCC2 /* IHVideoPlayerView.swift */; };
-		E3F6E3951D81C25300C693F2 /* kuala_lumpur_timelapse.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E3F6E3941D81C23000C693F2 /* kuala_lumpur_timelapse.mp4 */; };
+		E3F0476A1F36422D007F1777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0475C1F36422D007F1777 /* AppDelegate.swift */; };
+		E3F0476B1F36422D007F1777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F0475D1F36422D007F1777 /* Assets.xcassets */; };
+		E3F0476C1F36422D007F1777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F0475E1F36422D007F1777 /* LaunchScreen.storyboard */; };
+		E3F0476D1F36422D007F1777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F047601F36422D007F1777 /* Main.storyboard */; };
+		E3F0476E1F36422D007F1777 /* GasFlames.mov in Resources */ = {isa = PBXBuildFile; fileRef = E3F047621F36422D007F1777 /* GasFlames.mov */; };
+		E3F0476F1F36422D007F1777 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3F047631F36422D007F1777 /* Info.plist */; };
+		E3F047701F36422D007F1777 /* kuala_lumpur_timelapse.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E3F047641F36422D007F1777 /* kuala_lumpur_timelapse.mp4 */; };
+		E3F047711F36422D007F1777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F047651F36422D007F1777 /* ViewController.swift */; };
+		E3F047731F364299007F1777 /* LoopingVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F047721F364299007F1777 /* LoopingVideoPlayerView.swift */; };
+		E3F047751F3642BB007F1777 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F047741F3642BB007F1777 /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E3EDB6D81D5D25BD0033CCC2 /* IHLoopingVideoPlayerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IHLoopingVideoPlayerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3EDB6DB1D5D25BD0033CCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3EDB6DD1D5D25BD0033CCC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3EDB6E01D5D25BD0033CCC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E3EDB6E21D5D25BD0033CCC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E3EDB6E51D5D25BD0033CCC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E3EDB6E71D5D25BD0033CCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3EDB6ED1D5D278D0033CCC2 /* GasFlames.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = GasFlames.mov; sourceTree = "<group>"; };
-		E3EDB6F41D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHLoopingVideoPlayerView.swift; sourceTree = "<group>"; };
-		E3EDB6F61D5D2C6E0033CCC2 /* IHVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHVideoPlayerView.swift; sourceTree = "<group>"; };
-		E3F6E3941D81C23000C693F2 /* kuala_lumpur_timelapse.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kuala_lumpur_timelapse.mp4; sourceTree = "<group>"; };
+		E3EDB6D81D5D25BD0033CCC2 /* LoopingVideoPlayerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoopingVideoPlayerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3F0475C1F36422D007F1777 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3F0475D1F36422D007F1777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3F0475F1F36422D007F1777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3F047611F36422D007F1777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3F047621F36422D007F1777 /* GasFlames.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = GasFlames.mov; sourceTree = "<group>"; };
+		E3F047631F36422D007F1777 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3F047641F36422D007F1777 /* kuala_lumpur_timelapse.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kuala_lumpur_timelapse.mp4; sourceTree = "<group>"; };
+		E3F047651F36422D007F1777 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3F047721F364299007F1777 /* LoopingVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopingVideoPlayerView.swift; sourceTree = "<group>"; };
+		E3F047741F3642BB007F1777 /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +47,8 @@
 		E3EDB6CF1D5D25BD0033CCC2 = {
 			isa = PBXGroup;
 			children = (
-				E3EDB6DA1D5D25BD0033CCC2 /* IHLoopingVideoPlayerViewDemo */,
-				E3EDB6F31D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView */,
+				E3F047551F36422D007F1777 /* LoopingVideoPlayerView */,
+				E3F0475B1F36422D007F1777 /* LoopingVideoPlayerViewDemo */,
 				E3EDB6D91D5D25BD0033CCC2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,49 +56,49 @@
 		E3EDB6D91D5D25BD0033CCC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3EDB6D81D5D25BD0033CCC2 /* IHLoopingVideoPlayerViewDemo.app */,
+				E3EDB6D81D5D25BD0033CCC2 /* LoopingVideoPlayerViewDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E3EDB6DA1D5D25BD0033CCC2 /* IHLoopingVideoPlayerViewDemo */ = {
+		E3F047551F36422D007F1777 /* LoopingVideoPlayerView */ = {
 			isa = PBXGroup;
 			children = (
-				E3EDB6DB1D5D25BD0033CCC2 /* AppDelegate.swift */,
-				E3F6E3941D81C23000C693F2 /* kuala_lumpur_timelapse.mp4 */,
-				E3EDB6ED1D5D278D0033CCC2 /* GasFlames.mov */,
-				E3EDB6DD1D5D25BD0033CCC2 /* ViewController.swift */,
-				E3EDB6DF1D5D25BD0033CCC2 /* Main.storyboard */,
-				E3EDB6E21D5D25BD0033CCC2 /* Assets.xcassets */,
-				E3EDB6E41D5D25BD0033CCC2 /* LaunchScreen.storyboard */,
-				E3EDB6E71D5D25BD0033CCC2 /* Info.plist */,
+				E3F047721F364299007F1777 /* LoopingVideoPlayerView.swift */,
+				E3F047591F36422D007F1777 /* Views */,
 			);
-			path = IHLoopingVideoPlayerViewDemo;
+			path = LoopingVideoPlayerView;
 			sourceTree = "<group>";
 		};
-		E3EDB6F31D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView */ = {
+		E3F047591F36422D007F1777 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E3EDB6F41D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift */,
-				E3EDB6F51D5D2C6E0033CCC2 /* Views */,
-			);
-			path = IHLoopingVideoPlayerView;
-			sourceTree = "<group>";
-		};
-		E3EDB6F51D5D2C6E0033CCC2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E3EDB6F61D5D2C6E0033CCC2 /* IHVideoPlayerView.swift */,
+				E3F047741F3642BB007F1777 /* VideoPlayerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E3F0475B1F36422D007F1777 /* LoopingVideoPlayerViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E3F0475C1F36422D007F1777 /* AppDelegate.swift */,
+				E3F0475D1F36422D007F1777 /* Assets.xcassets */,
+				E3F0475E1F36422D007F1777 /* LaunchScreen.storyboard */,
+				E3F047601F36422D007F1777 /* Main.storyboard */,
+				E3F047621F36422D007F1777 /* GasFlames.mov */,
+				E3F047631F36422D007F1777 /* Info.plist */,
+				E3F047641F36422D007F1777 /* kuala_lumpur_timelapse.mp4 */,
+				E3F047651F36422D007F1777 /* ViewController.swift */,
+			);
+			path = LoopingVideoPlayerViewDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3EDB6D71D5D25BD0033CCC2 /* IHLoopingVideoPlayerViewDemo */ = {
+		E3EDB6D71D5D25BD0033CCC2 /* LoopingVideoPlayerViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3EDB6EA1D5D25BD0033CCC2 /* Build configuration list for PBXNativeTarget "IHLoopingVideoPlayerViewDemo" */;
+			buildConfigurationList = E3EDB6EA1D5D25BD0033CCC2 /* Build configuration list for PBXNativeTarget "LoopingVideoPlayerViewDemo" */;
 			buildPhases = (
 				E3EDB6D41D5D25BD0033CCC2 /* Sources */,
 				E3EDB6D51D5D25BD0033CCC2 /* Frameworks */,
@@ -107,9 +108,9 @@
 			);
 			dependencies = (
 			);
-			name = IHLoopingVideoPlayerViewDemo;
-			productName = IHLoopingVideoPlayerViewDemo;
-			productReference = E3EDB6D81D5D25BD0033CCC2 /* IHLoopingVideoPlayerViewDemo.app */;
+			name = LoopingVideoPlayerViewDemo;
+			productName = LoopingVideoPlayerViewDemo;
+			productReference = E3EDB6D81D5D25BD0033CCC2 /* LoopingVideoPlayerViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +129,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E3EDB6D31D5D25BD0033CCC2 /* Build configuration list for PBXProject "IHLoopingVideoPlayerViewDemo" */;
+			buildConfigurationList = E3EDB6D31D5D25BD0033CCC2 /* Build configuration list for PBXProject "LoopingVideoPlayerViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -141,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3EDB6D71D5D25BD0033CCC2 /* IHLoopingVideoPlayerViewDemo */,
+				E3EDB6D71D5D25BD0033CCC2 /* LoopingVideoPlayerViewDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -151,11 +152,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3EDB6EE1D5D278D0033CCC2 /* GasFlames.mov in Resources */,
-				E3EDB6E61D5D25BD0033CCC2 /* LaunchScreen.storyboard in Resources */,
-				E3F6E3951D81C25300C693F2 /* kuala_lumpur_timelapse.mp4 in Resources */,
-				E3EDB6E31D5D25BD0033CCC2 /* Assets.xcassets in Resources */,
-				E3EDB6E11D5D25BD0033CCC2 /* Main.storyboard in Resources */,
+				E3F0476E1F36422D007F1777 /* GasFlames.mov in Resources */,
+				E3F0476D1F36422D007F1777 /* Main.storyboard in Resources */,
+				E3F0476B1F36422D007F1777 /* Assets.xcassets in Resources */,
+				E3F0476F1F36422D007F1777 /* Info.plist in Resources */,
+				E3F047701F36422D007F1777 /* kuala_lumpur_timelapse.mp4 in Resources */,
+				E3F0476C1F36422D007F1777 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,30 +168,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3EDB6DE1D5D25BD0033CCC2 /* ViewController.swift in Sources */,
-				E3EDB6DC1D5D25BD0033CCC2 /* AppDelegate.swift in Sources */,
-				E3EDB6F81D5D2C6E0033CCC2 /* IHVideoPlayerView.swift in Sources */,
-				E3EDB6F71D5D2C6E0033CCC2 /* IHLoopingVideoPlayerView.swift in Sources */,
+				E3F047711F36422D007F1777 /* ViewController.swift in Sources */,
+				E3F047731F364299007F1777 /* LoopingVideoPlayerView.swift in Sources */,
+				E3F0476A1F36422D007F1777 /* AppDelegate.swift in Sources */,
+				E3F047751F3642BB007F1777 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E3EDB6DF1D5D25BD0033CCC2 /* Main.storyboard */ = {
+		E3F0475E1F36422D007F1777 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E3EDB6E01D5D25BD0033CCC2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E3EDB6E41D5D25BD0033CCC2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E3EDB6E51D5D25BD0033CCC2 /* Base */,
+				E3F0475F1F36422D007F1777 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E3F047601F36422D007F1777 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3F047611F36422D007F1777 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,9 +289,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IHLoopingVideoPlayerViewDemo/Info.plist;
+				INFOPLIST_FILE = LoopingVideoPlayerViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.IshanHanda.IHLoopingVideoPlayerViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IshanHanda.LoopingVideoPlayerViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -299,9 +301,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IHLoopingVideoPlayerViewDemo/Info.plist;
+				INFOPLIST_FILE = LoopingVideoPlayerViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.IshanHanda.IHLoopingVideoPlayerViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IshanHanda.LoopingVideoPlayerViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -310,7 +312,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3EDB6D31D5D25BD0033CCC2 /* Build configuration list for PBXProject "IHLoopingVideoPlayerViewDemo" */ = {
+		E3EDB6D31D5D25BD0033CCC2 /* Build configuration list for PBXProject "LoopingVideoPlayerViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3EDB6E81D5D25BD0033CCC2 /* Debug */,
@@ -319,7 +321,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3EDB6EA1D5D25BD0033CCC2 /* Build configuration list for PBXNativeTarget "IHLoopingVideoPlayerViewDemo" */ = {
+		E3EDB6EA1D5D25BD0033CCC2 /* Build configuration list for PBXNativeTarget "LoopingVideoPlayerViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3EDB6EB1D5D25BD0033CCC2 /* Debug */,

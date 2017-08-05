@@ -1,5 +1,5 @@
 //
-//  IHVideoPlayerView.swift
+//  VideoPlayerView.swift
 //
 //  Copyright © 2016 Ishan Handa. All rights reserved.
 //
@@ -23,7 +23,7 @@
 import UIKit
 import AVFoundation
 
-class IHVideoPlayerView: UIView {
+class VideoPlayerView: UIView {
     
     var player: AVPlayer! {
         get {
@@ -34,29 +34,24 @@ class IHVideoPlayerView: UIView {
         }
     }
     
-    
     override init (frame : CGRect) {
         super.init(frame : frame)
         self.commonInit()
     }
     
-    
     convenience init () {
         self.init(frame:CGRect.zero)
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
     
-    
     private func commonInit() {
         let layer = self.layer as! AVPlayerLayer
         layer.videoGravity = AVLayerVideoGravityResizeAspectFill
     }
-    
     
     override class var layerClass : AnyClass {
         return AVPlayerLayer.self
