@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E3EDB6D71D5D25BD0033CCC2"
-               BuildableName = "IHLoopingVideoPlayerViewDemo.app"
-               BlueprintName = "IHLoopingVideoPlayerViewDemo"
-               ReferencedContainer = "container:IHLoopingVideoPlayerViewDemo.xcodeproj">
+               BuildableName = "LoopingVideoPlayerViewDemo.app"
+               BlueprintName = "LoopingVideoPlayerViewDemo"
+               ReferencedContainer = "container:LoopingVideoPlayerViewDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E3EDB6D71D5D25BD0033CCC2"
-            BuildableName = "IHLoopingVideoPlayerViewDemo.app"
-            BlueprintName = "IHLoopingVideoPlayerViewDemo"
-            ReferencedContainer = "container:IHLoopingVideoPlayerViewDemo.xcodeproj">
+            BuildableName = "LoopingVideoPlayerViewDemo.app"
+            BlueprintName = "LoopingVideoPlayerViewDemo"
+            ReferencedContainer = "container:LoopingVideoPlayerViewDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E3EDB6D71D5D25BD0033CCC2"
-            BuildableName = "IHLoopingVideoPlayerViewDemo.app"
-            BlueprintName = "IHLoopingVideoPlayerViewDemo"
-            ReferencedContainer = "container:IHLoopingVideoPlayerViewDemo.xcodeproj">
+            BuildableName = "LoopingVideoPlayerViewDemo.app"
+            BlueprintName = "LoopingVideoPlayerViewDemo"
+            ReferencedContainer = "container:LoopingVideoPlayerViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E3EDB6D71D5D25BD0033CCC2"
-            BuildableName = "IHLoopingVideoPlayerViewDemo.app"
-            BlueprintName = "IHLoopingVideoPlayerViewDemo"
-            ReferencedContainer = "container:IHLoopingVideoPlayerViewDemo.xcodeproj">
+            BuildableName = "LoopingVideoPlayerViewDemo.app"
+            BlueprintName = "LoopingVideoPlayerViewDemo"
+            ReferencedContainer = "container:LoopingVideoPlayerViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

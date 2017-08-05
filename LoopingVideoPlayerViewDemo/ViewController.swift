@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  IHLoopingVideoPlayerViewDemo
+//  LoopingVideoPlayerViewDemo
 //
 //  Created by Ishan Handa on 11/08/16.
 //  Copyright © 2016 Ishan Handa. All rights reserved.
@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
-    @IBOutlet var loopingVideoPlayer: IHLoopingVideoPlayerView!
+    @IBOutlet var loopingVideoPlayer: LoopingVideoPlayerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
